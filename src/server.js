@@ -5,9 +5,9 @@ const port = process.env.PORT || 8080;
 
 app.use(express.json());
 
-app.use('/pengguna', rutePengguna);
-app.use('/transaksi', ruteTransaksi);
-app.use('/akun', ruteAkun);
+app.use('/users', userRoutes);
+app.use('/transactions', transactionRoutes);
+app.use('/accounts', accountRoutes);
 
 sequelize.sync().then(() => {
     app.listen(port, () => {
